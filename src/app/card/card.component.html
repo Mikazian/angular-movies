@@ -1,0 +1,16 @@
+<div class="main-container">
+  <button (click)="toogleMovies()">{{ status }}</button>
+  <section class="container" *appDisplayMovies="displayMoviesList">
+    <div *ngFor="let movie of movies" class="card" appHightlight>
+      <div class="img-container">
+        <img [src]="movie.poster" alt="" />
+      </div>
+      <div class="content">
+        <p>{{ movie.title }} ({{ movie.year }})</p>
+      </div>
+      <footer>
+        <p>{{ movie.editor }}</p>
+      </footer>
+    </div>
+  </section>
+</div>
